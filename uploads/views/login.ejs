@@ -1,0 +1,56 @@
+<%- include('partials/headerLogin.ejs') %>
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+/>
+<div class="main">
+  <div class="container">
+    <center>
+      <div class="middle">
+        <div id="login">
+          <form action="/authenticate" method="post">
+            <fieldset class="clearfix">
+              <p>
+                <span class="fa fa-user"></span
+                ><input
+                  type="text"
+                  name="email"
+                  Placeholder="Username"
+                  required
+                />
+              </p>
+
+              <p>
+                <span class="fa fa-lock"></span>
+                <input
+                  type="password"
+                  name="senha"
+                  Placeholder="Password"
+                  required
+                />
+              </p>
+
+
+              <div class="w100">
+                <span class="spanBtnLogin">
+                  <input type="submit" value="Entrar" class="btn btn-block"/>
+                </span>
+              </div>
+            </fieldset>
+            <div class="clearfix"></div>
+          </form>
+
+          <div class="clearfix"></div>
+        </div>
+        <!-- end login -->
+        <div class="logo">
+          <!-- LOGO -->
+          <img src="http://auditor.ctprice.com.br/CT2.png" alt="Logo" />
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </center>
+  </div>
+</div>
+<%- include('partials/footerLogin.ejs') %>

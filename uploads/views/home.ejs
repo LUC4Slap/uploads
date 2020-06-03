@@ -1,0 +1,7 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+  <% arquivos.forEach(arq => { %>
+    <a href="/uploads/<%= arq %>"><%= arq %></a><br />
+  <% }) %>
+</div>
+<%- include('partials/footer.ejs') %>
