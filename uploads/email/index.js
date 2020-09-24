@@ -7,8 +7,8 @@ function EnviarEmail() {
         port: 465,
         secure: true,
         auth: {
-            user: "lucas.almeida@ctprice.com.br",
-            pass: "lucasalmeida12"
+            user: "",
+            pass: ""
         },
         tls:{
             ciphers:'SSLv3'
@@ -16,8 +16,8 @@ function EnviarEmail() {
     });
     
     transporter.sendMail({
-        from: "Lucas Almeida <lucas.almeida@ctprice.com.br>",
-        to: "luciano.queiroz@ctprice.com.br, lilian.moraes@ctprice.com.br",
+        from: " <>",
+        to: "",
         subject: "Aquivo nos uploads recente",
         text: "Arqui",
         html: "<a href='http://uploadsctprice.com/home'>Ver</a>"
