@@ -1,7 +1,13 @@
 <%- include('partials/header.ejs') %>
 <div class="container">
   <% arquivos.forEach(arq => { %>
-    <a href="/uploads/<%= arq %>"><%= arq %></a><br />
+    <form action="/delete" method="post">
+      <input type="hidden" name="arquivo" value="<%= arq %>">
+      <a href="/uploads/<%= arq %>"><%= arq %></a>
+      <button type="submit" class="btn btn-danger">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </form>
   <% }) %>
 </div>
 <%- include('partials/footer.ejs') %>

@@ -51,11 +51,11 @@ app.get("/", (req, res) => {
   res.render("login");
 });
 
-app.get("/uploads",auth, (req, res) => {
+app.get("/uploads", auth, (req, res) => {
   res.render("uploads");
 });
 
-app.post("/create",auth, (req, res) => {
+app.post("/create", (req, res) => {
   let { nome, usuario, senha, senha_original } = req.body;
   Users.create({ nome, usuario, senha, senha_original })
     .then((user) => {
@@ -81,15 +81,27 @@ app.post("/authenticate", (req, res) => {
   });
 });
 
-app.get("/home",auth, (req, res) => {
+app.get("/home", auth, (req, res) => {
   fs.readdir("./uploads", (err, paths) => {
     res.render("home", { arquivos: paths });
   });
 });
 
-app.post("/upload",auth, upload.single("file"), async (req, res) => {
+app.post("/upload", auth, upload.single("file"), async (req, res) => {
   res.redirect("home");
-  await mail();
+  // await mail();
+});
+
+app.post("/delete", auth, (req, res) => {
+  try {
+    var filePath = `uploads/${req.body.arquivo}`;
+    fs.unlinkSync(filePath);
+    console.log("Arquivo deletado");
+    res.redirect("home");
+  } catch (err) {
+    // handle the error
+    console.log(err);
+  }
 });
 
 app.get("/sair", (req, res) => {
@@ -97,4 +109,4 @@ app.get("/sair", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(3000, () => console.log("ON"));
+app.listen(8080, () => console.log("ON"));

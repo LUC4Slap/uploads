@@ -1,5 +1,0 @@
-como subir um site na umbler
-
-1 -> trocar a porta do express para 3000
-2 -> arquivo principal com o nome de app
-3 -> ter um script no package.json com o nome de start e o comando node app.js
