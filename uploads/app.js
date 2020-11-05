@@ -48,7 +48,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("login");
+  res.render("login", { message: undefined });
 });
 
 app.get("/uploads", auth, (req, res) => {
@@ -76,7 +76,7 @@ app.post("/authenticate", (req, res) => {
       };
       res.redirect("/uploads");
     } else {
-      res.redirect("/");
+      res.render("login", { message: "Usuario ou senha incorretos" });
     }
   });
 });

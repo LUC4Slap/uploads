@@ -197,3 +197,14 @@ input[type="password"] {
   text-align: right;
   display: inline-block;
 }
+
+.message {
+  width: 50%;
+  display: flex;
+  margin-right: 205px;
+  margin-bottom: 20px;
+}
+
+/* .message > div {
+  color: #fff;
+} */

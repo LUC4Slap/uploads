@@ -5,6 +5,14 @@
 />
 <div class="main">
   <div class="container">
+    <div class="message">
+      <% if(message){ %>
+      <div class="alert alert-warning" id="div">
+        <span><%= message %></span>
+        <button class="btn" id="message">X</button>
+      </div>
+      <% } %>
+    </div>
     <center>
       <div class="middle">
         <div id="login">
@@ -30,10 +38,9 @@
                 />
               </p>
 
-
               <div class="w100">
                 <span class="spanBtnLogin">
-                  <input type="submit" value="Entrar" class="btn btn-block"/>
+                  <input type="submit" value="Entrar" class="btn btn-block" />
                 </span>
               </div>
             </fieldset>
