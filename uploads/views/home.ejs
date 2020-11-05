@@ -1,13 +1,20 @@
 <%- include('partials/header.ejs') %>
 <div class="container">
-  <% arquivos.forEach(arq => { %>
-    <form action="/delete" method="post">
-      <input type="hidden" name="arquivo" value="<%= arq %>">
-      <a href="/uploads/<%= arq %>"><%= arq %></a>
-      <button type="submit" class="btn btn-danger">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-      </button>
-    </form>
-  <% }) %>
+  <ul class="list-group mt-3">
+    <li class="list-group-item active">Arquivos</li>
+    <% arquivos.forEach(arq => { %>
+    <li class="list-group-item">
+      <form action="/delete" method="post" class="form">
+        <input type="hidden" name="arquivo" value="<%= arq %>" />
+        <div class="divBotao">
+          <a href="/uploads/<%= arq %>"><%= arq %></a>
+          <button type="submit" class="btn btn-danger botao">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+    </li>
+    <% }) %>
+  </ul>
 </div>
 <%- include('partials/footer.ejs') %>
