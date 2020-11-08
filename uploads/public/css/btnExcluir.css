@@ -4,11 +4,12 @@
 
 .divBotao {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .botao {
   display: flex;
-  position: relative;
-  right: -96%;
-  top: -21px;
+  right: -90%;
 }
+
